@@ -1,0 +1,36 @@
+Web Scraping 
+
+1- first we require express store it in an app variable
+2- then we made a port listen to it 
+3- made the middlewares
+4- made the fuction get the routes 
+5- Whatever comes with /api/v1 goes to get routes funtion app.use('/api/v1', getRoutes);
+6- in get Routes fuction we required express the we call the router function now in this whatever fucntion comes with /indeed it will go to routes.post function
+routes.post('/indeed', async(req,res)=>{
+    try{
+        const {skill} =req.body;
+        let scrp = await main(skill);
+        return res.status(200).json({
+            status:"ok",
+            list: scrp?.list || {}
+        })
+7. then exports this module of inport in index.js
+8. now we are going to make function which will return skill (scrapefn)
+9. As we are doing scraping we will use puppeteer here 
+10- in list constant we will pass the list of requirements const data = {
+    list: []
+};
+11- Now we will make async main fuction in which we will pass skill
+12- then we will launch the browser using puppeteer then where we will write puppeteer is false because we want to see it happening
+13-then we will open then page
+14- goto website with its link
+15- we will write wait until as we do not want it close own its own 
+16- Now we want to insert javascript in the url to fetch the data
+17-Then using querryselectorall we select all the queries
+18-then we will loop over all of them and store in variable
+19 - then we will write our edge cases like what if salary is none
+20- then we will finally push all the data in list data.list.push and return the data close the browser
+21-and the exports the module
+22- we will make response constant in this and in that we will await for jobData
+23- after getting it will stringfy it ans will save in a file using fucton called fs provided by js
+24-fs is used for reading and writing of file
