@@ -34,3 +34,5 @@ routes.post('/indeed', async(req,res)=>{
 22- we will make response constant in this and in that we will await for jobData
 23- after getting it will stringfy it ans will save in a file using fucton called fs provided by js
 24-fs is used for reading and writing of file
+25- we can also add ngrock which provides us http server for sometime 
+26- we can provide nodemon also
